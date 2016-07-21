@@ -14,7 +14,9 @@ namespace AsyncProgram
             // Create task and start it.
             // ... Wait for it to complete.
             Task task = new Task(ProcessDataAsync);
+            Console.WriteLine("Start task");
             task.Start();
+            Console.WriteLine("Please wait patiently until task finishes.");
             task.Wait();
             Console.ReadLine();
         }
@@ -26,8 +28,7 @@ namespace AsyncProgram
 
             // Control returns here before HandleFileAsync returns.
             // ... Prompt the user.
-            Console.WriteLine("Please wait patiently " +
-                "while I do something important.");
+            Console.WriteLine("Please wait patiently while I do something important.");
 
             // Wait for the HandleFile task to complete.
             // ... Display its results.
