@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 // default 32768 in Framework 4.0 (64-bit environment) (because the limitation of memory)
 // 250 per core in Framework 3.5 => eight-core machine, this gives a maximum size to the thread pool of 2,000 threads
 // 25 per core in Framework 2.0
-namespace AsyncProgram
 // NET 3.5 changed the maximum number of threads in the thread pool to 250 per core
 // NET 4.0 the maximum number of threads is determined by the amount of memory available (on most modern machines it will be 1,023 worker threads and 1,000 I/O threads).
 namespace AsyncProgram
