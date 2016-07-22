@@ -36,5 +36,24 @@ namespace IOBasedTask
         {
             return Task.Factory.StartNew(() => DownloadWebPage(url));
         }
+
+        // keeping the number of threads as small as possible
+        private static Task<string> BetterDownloadWebPageAsync(string url)
+        {
+            WebRequest request = WebRequest.Create(url);
+            IAsyncResult ar = request.BeginGetResponse(null, null);
+            Task<string> downloadTask =
+            Task.Factory.FromAsync<string>(ar, iar =>
+            {
+                using (WebResponse response = request.EndGetResponse(iar))
+                {
+                    using (var reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+            });
+            return downloadTask;
+        }
     }
 }

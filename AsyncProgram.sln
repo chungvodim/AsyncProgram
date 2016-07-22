@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncProgram", "AsyncProgra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasedTask", "BasedTask\BasedTask.csproj", "{AB24438C-CB22-4845-ADDC-7AC2A02025D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOBasedTask", "IOBasedTask\IOBasedTask.csproj", "{FA0A0BFB-A250-4843-86FA-0F2B25A8356B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuncDelegate", "FuncDelegate\FuncDelegate.csproj", "{1D8F6FCA-A5F5-4907-9D39-45C2583401A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{AB24438C-CB22-4845-ADDC-7AC2A02025D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB24438C-CB22-4845-ADDC-7AC2A02025D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB24438C-CB22-4845-ADDC-7AC2A02025D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA0A0BFB-A250-4843-86FA-0F2B25A8356B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0A0BFB-A250-4843-86FA-0F2B25A8356B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0A0BFB-A250-4843-86FA-0F2B25A8356B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0A0BFB-A250-4843-86FA-0F2B25A8356B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D8F6FCA-A5F5-4907-9D39-45C2583401A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8F6FCA-A5F5-4907-9D39-45C2583401A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D8F6FCA-A5F5-4907-9D39-45C2583401A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8F6FCA-A5F5-4907-9D39-45C2583401A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
