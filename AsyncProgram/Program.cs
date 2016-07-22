@@ -5,6 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// .NET 4.0 the maximum number of threads is determined by the amount of memory available
+// the default stack size assigned by the linker is 1MB, and 2000 stacks times 1MB per stack equals around 2GB/
+// You can try to squeeze more threads into your process by reducing your stack size
+
+// default 1023 in Framework 4.0 (32-bit environment) (because the limitation of memory)
+// default 32768 in Framework 4.0 (64-bit environment) (because the limitation of memory)
+// 250 per core in Framework 3.5 => eight-core machine, this gives a maximum size to the thread pool of 2,000 threads
+// 25 per core in Framework 2.0
 namespace AsyncProgram
 {
     class Program
