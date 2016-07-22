@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// NET 3.5 changed the maximum number of threads in the thread pool to 250 per core
+// NET 4.0 the maximum number of threads is determined by the amount of memory available (on most modern machines it will be 1,023 worker threads and 1,000 I/O threads).
 namespace AsyncProgram
 {
     class Program
