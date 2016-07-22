@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace ErrorHandling
 {
@@ -17,11 +18,17 @@ namespace ErrorHandling
             }
             catch (AggregateException errors)
             {
+                errors.Handle(IgnoreXmlErrors);
                 foreach (Exception error in errors.Flatten().InnerExceptions)
                 {
                     Console.WriteLine("{0} : {1}", error.GetType().Name, error.Message);
                 }
             }
+        }
+
+        private static bool IgnoreXmlErrors(Exception arg)
+        {
+            return (arg.GetType() == typeof(XmlException));
         }
 
         private static void Import(string v)
