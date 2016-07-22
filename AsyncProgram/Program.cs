@@ -14,6 +14,9 @@ using System.Threading.Tasks;
 // 250 per core in Framework 3.5 => eight-core machine, this gives a maximum size to the thread pool of 2,000 threads
 // 25 per core in Framework 2.0
 namespace AsyncProgram
+// NET 3.5 changed the maximum number of threads in the thread pool to 250 per core
+// NET 4.0 the maximum number of threads is determined by the amount of memory available (on most modern machines it will be 1,023 worker threads and 1,000 I/O threads).
+namespace AsyncProgram
 {
     class Program
     {
@@ -22,7 +25,9 @@ namespace AsyncProgram
             // Create task and start it.
             // ... Wait for it to complete.
             Task task = new Task(ProcessDataAsync);
+            Console.WriteLine("Start task");
             task.Start();
+            Console.WriteLine("Please wait patiently until task finishes.");
             task.Wait();
             Console.ReadLine();
         }
@@ -34,8 +39,7 @@ namespace AsyncProgram
 
             // Control returns here before HandleFileAsync returns.
             // ... Prompt the user.
-            Console.WriteLine("Please wait patiently " +
-                "while I do something important.");
+            Console.WriteLine("Please wait patiently while I do something important.");
 
             // Wait for the HandleFile task to complete.
             // ... Display its results.
