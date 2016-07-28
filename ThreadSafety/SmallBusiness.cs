@@ -54,7 +54,7 @@ namespace ThreadSafety
             }
         }
 
-        public void ReceivePayment(decimal amount)
+        public void MostSaferReceivePayment(decimal amount)
         {
             bool lockTaken = false;
             try
@@ -77,6 +77,15 @@ namespace ThreadSafety
                 {
                     Monitor.Exit(stateGuard);
                 }
+            }
+        }
+
+        public void BestReceivePayment(decimal amount)
+        {
+            using (stateGuard.Lock(TimeSpan.FromSeconds(30)))
+            {
+                cash += amount;
+                receivables -= amount;
             }
         }
 
