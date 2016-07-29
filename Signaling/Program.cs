@@ -12,11 +12,18 @@ namespace Signaling
         private static readonly object guard = new object();
         static void Main(string[] args)
         {
-            TestSignaling();
+            TestMonitorSignaling();
             Console.WriteLine("finish waiting");
         }
 
-        private static void TestSignaling()
+        private static void TestManualResetEventSlim()
+        {
+            MyManualResetEvent mmre = new MyManualResetEvent();
+            mmre.MRES_SetWaitReset();
+            mmre.MRES_SpinCountWaitHandle();
+        }
+
+        private static void TestMonitorSignaling()
         {
             var ms = new MonitorSemaphore(1,10);
             List<Task> tasks = new List<Task>();

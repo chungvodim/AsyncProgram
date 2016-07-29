@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * Semaphore gives you control how many threads you want to unblock at a time.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
