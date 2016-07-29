@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Signaling
 {
-    public class Factory
+    public class MonitorFactory
     {
         private void Produce(object obj)
         {

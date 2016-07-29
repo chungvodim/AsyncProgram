@@ -18,6 +18,10 @@ namespace SynchronizationPrimitive
         static Barrier barrier = new Barrier(participantCount: 5);
         static void Main(string[] args)
         {
+        }
+
+        private static void TestStaticParticipation()
+        {
             Task[] tasks = new Task[5];
 
             for (int i = 0; i < 5; ++i)
@@ -33,8 +37,34 @@ namespace SynchronizationPrimitive
 
             Console.WriteLine("Backup completed");
             Console.ReadLine();
+        }
 
+        private static void TestDynamicParticipation()
+        {
+            int totalRecords = GetNumberOfRecords();
 
+            Task[] tasks = new Task[totalRecords];
+
+            for (int i = 0; i < totalRecords; ++i)
+            {
+                barrier.AddParticipant();
+
+                int j = i;
+                tasks[j] = Task.Factory.StartNew(() =>
+                {
+                    GetDataAndStoreData(j);
+                });
+            }
+
+            Task.WaitAll(tasks);
+
+            Console.WriteLine("Backup completed");
+            Console.ReadLine();
+        }
+
+        static int GetNumberOfRecords()
+        {
+            return 20;
         }
 
         static void GetDataAndStoreData(int index)

@@ -19,6 +19,7 @@ namespace ReaderWriterLock
         {
             List<Task> tasks = new List<Task>();
             var cache = new Cache();
+            // Write Thread
             tasks.Add(Task.Factory.StartNew(() =>
             {
                 Random rnd = new Random();
@@ -28,6 +29,7 @@ namespace ReaderWriterLock
                     Thread.Sleep(1000);
                 }
             }));
+            // Read Thread
             tasks.Add(Task.Factory.StartNew(() =>
             {
                 Random rnd = new Random();

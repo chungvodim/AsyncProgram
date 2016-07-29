@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signaling", "Signaling\Sign
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderWriterLock", "ReaderWriterLock\ReaderWriterLock.csproj", "{A36D0B01-DE8D-445E-83CA-F53E8BB021D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynchronizationPrimitive", "SynchronizationPrimitive\SynchronizationPrimitive.csproj", "{C887B2B0-E740-43C0-AAA2-C74A35CF396F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandle", "EventHandle\EventHandle.csproj", "{9B955713-990D-47EF-86A0-ED3283FD5FF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{A36D0B01-DE8D-445E-83CA-F53E8BB021D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A36D0B01-DE8D-445E-83CA-F53E8BB021D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A36D0B01-DE8D-445E-83CA-F53E8BB021D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C887B2B0-E740-43C0-AAA2-C74A35CF396F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C887B2B0-E740-43C0-AAA2-C74A35CF396F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C887B2B0-E740-43C0-AAA2-C74A35CF396F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C887B2B0-E740-43C0-AAA2-C74A35CF396F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B955713-990D-47EF-86A0-ED3283FD5FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B955713-990D-47EF-86A0-ED3283FD5FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B955713-990D-47EF-86A0-ED3283FD5FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B955713-990D-47EF-86A0-ED3283FD5FF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
