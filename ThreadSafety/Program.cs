@@ -9,7 +9,14 @@ namespace ThreadSafety
 {
     class Program
     {
+        private static readonly object guard = new object();
         static void Main(string[] args)
+        {
+            TestLock();
+            Console.WriteLine("finish waiting");
+        }
+
+        private static void TestMonitor()
         {
             List<Task> tasks = new List<Task>();
             SmallBusiness sb = new SmallBusiness(1000, 1000);
@@ -24,7 +31,35 @@ namespace ThreadSafety
                 tasks.Add(t);
             }
             Task.WaitAll(tasks.ToArray());
-            Console.WriteLine("finish waiting");
+        }
+
+        private static void TestLock()
+        {
+            List<Task> tasks = new List<Task>();
+            for (int i = 0; i < 2; i++)
+            {
+                tasks.Add(Task.Factory.StartNew(() => IncreaseValue(true)));
+            }
+            Task.WaitAll(tasks.ToArray());
+        }
+
+        private static void IncreaseValue(bool hasLock)
+        {
+            if (hasLock)
+            {
+                lock (guard)
+                {
+                    Console.WriteLine("i'm using this function, pls wait for your turn");
+                    Thread.Sleep(5000);
+                    Console.WriteLine("your turn");
+                }
+            }
+            else
+            {
+                Console.WriteLine("i'm using this function without lock, pls wait for your turn");
+                Thread.Sleep(5000);
+                Console.WriteLine("your turn");
+            }
         }
 
         private static void TestInterLocked()
