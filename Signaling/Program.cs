@@ -40,6 +40,7 @@ namespace Signaling
                 lock (queue)
                 {
                     queue.Enqueue(rnd.Next(100));
+                    // Produce thread wake up blocked thread (consumer thread) when there is actually work available on the queue
                     Monitor.Pulse(queue);
                 }
                 Thread.Sleep(rnd.Next(2000));
