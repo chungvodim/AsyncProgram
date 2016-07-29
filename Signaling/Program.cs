@@ -12,15 +12,21 @@ namespace Signaling
         private static readonly object guard = new object();
         static void Main(string[] args)
         {
-            TestMonitorSignaling();
+            TestSemaphoreSlim();
             Console.WriteLine("finish waiting");
+        }
+
+        private static void TestSemaphoreSlim()
+        {
+            MySemaphoreSlim mss = new MySemaphoreSlim();
+            mss.Run();
         }
 
         private static void TestManualResetEventSlim()
         {
             MyManualResetEvent mmre = new MyManualResetEvent();
             mmre.MRES_SetWaitReset();
-            mmre.MRES_SpinCountWaitHandle();
+            //mmre.MRES_SpinCountWaitHandle();
         }
 
         private static void TestMonitorSignaling()
