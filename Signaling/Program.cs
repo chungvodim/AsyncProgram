@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * Synchronization primitives
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +15,14 @@ namespace Signaling
         private static readonly object guard = new object();
         static void Main(string[] args)
         {
-            TestSemaphoreSlim();
+            TestBarrier();
             Console.WriteLine("finish waiting");
+        }
+
+        private static void TestBarrier()
+        {
+            MyBarrier mb = new MyBarrier();
+            mb.TestStaticParticipation();
         }
 
         private static void TestSemaphoreSlim()
