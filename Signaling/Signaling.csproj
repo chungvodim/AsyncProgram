@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BufferPool.cs" />
+    <Compile Include="IBuffer.cs" />
+    <Compile Include="LOHBuffer.cs" />
     <Compile Include="MonitorSemaphore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
