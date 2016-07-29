@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * ReaderWriterLockSlim is one kind of Synchronization Primitives
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

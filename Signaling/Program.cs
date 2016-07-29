@@ -1,5 +1,7 @@
 ﻿/*
- * Synchronization primitives
+ * There are two ways to share data between multiple threads:
+ *  Concurrent collection classes
+ *  Using Synchronization Primitives
  */
 using System;
 using System.Collections.Generic;
