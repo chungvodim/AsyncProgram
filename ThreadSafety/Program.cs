@@ -49,7 +49,7 @@ namespace ThreadSafety
             {
                 lock (guard)
                 {
-                    Console.WriteLine("i'm using this function, pls wait for your turn");
+                    Console.WriteLine("i'm using this function with lock, pls wait for your turn");
                     Thread.Sleep(5000);
                     Console.WriteLine("your turn");
                 }
