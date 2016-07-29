@@ -15,14 +15,25 @@ namespace EventHandle
         {
             MyClass mc = new MyClass();
             mc.myEvent += Mc_myEvent;
-            mc.myDelegate += Mc_myDelegate;
             mc.myNonArgsEvent += Mc_myNonArgsEvent;
+            mc.myDelegate += Mc_myDelegate;
             // handle event is synchronous
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
-                mc.OnDelegate(new object());
                 mc.OnEvent(EventArgs.Empty);
                 mc.OnNonArgsEvent();
+                mc.OnDelegate(new object());
+            }
+            Console.WriteLine("removing event handle");
+            Console.WriteLine("removing delegate handle");
+            mc.myEvent -= Mc_myEvent;
+            //mc.myNonArgsEvent -= Mc_myNonArgsEvent;
+            mc.myDelegate -= Mc_myDelegate;
+            for (int i = 0; i < 5; i++)
+            {
+                mc.OnEvent(EventArgs.Empty);
+                mc.OnNonArgsEvent();
+                mc.OnDelegate(new object());
             }
             Console.WriteLine("ending");
             Console.Read();
