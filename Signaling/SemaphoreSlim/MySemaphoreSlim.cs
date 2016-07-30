@@ -18,6 +18,8 @@ namespace Signaling
         public void Run()
         {
             // Create the semaphore.
+            // MaximumCount denotes the maximum number of threads that can enter concurrently.
+            // InitialCount denotes the initial number of threads which can enter the Semaphore directly.
             semaphore = new SemaphoreSlim(0, 3);
             Console.WriteLine("{0} tasks can enter the semaphore.", semaphore.CurrentCount);
             Task[] tasks = new Task[5];
