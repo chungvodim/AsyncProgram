@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConcurrentDataStructures.Lazy
+namespace ConcurrentDataStructures
 {
     public class Person
     {
@@ -13,6 +13,10 @@ namespace ConcurrentDataStructures.Lazy
         {
             Thread.Sleep(2000);
             Console.WriteLine("Created");
+        }
+        public Person(string name)
+        {
+            Name = name;
         }
         public string Name { get; set; }
         public int Age { get; set; }

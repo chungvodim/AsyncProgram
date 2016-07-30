@@ -71,5 +71,16 @@ namespace BasedTask
         {
             Console.WriteLine("Hello World");
         }
+
+        private static void CreateTask()
+        {
+            object obj = new object();
+            Task task = new Task((ob) => { DoSomething(ob); }, obj);
+        }
+        private static void DoSomething(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
