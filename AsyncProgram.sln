@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentDataStructures", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\AsyncAwait.csproj", "{7024F1F8-BBBB-4C3A-BBE8-2DEEE556B2FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSideAsync", "ServerSideAsync\ServerSideAsync.csproj", "{720D3EC5-ED15-44D0-9E58-C4C4F5139A8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{7024F1F8-BBBB-4C3A-BBE8-2DEEE556B2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7024F1F8-BBBB-4C3A-BBE8-2DEEE556B2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7024F1F8-BBBB-4C3A-BBE8-2DEEE556B2FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720D3EC5-ED15-44D0-9E58-C4C4F5139A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720D3EC5-ED15-44D0-9E58-C4C4F5139A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720D3EC5-ED15-44D0-9E58-C4C4F5139A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720D3EC5-ED15-44D0-9E58-C4C4F5139A8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

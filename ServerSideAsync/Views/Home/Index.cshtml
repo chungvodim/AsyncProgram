@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<button class="btn" onclick="GetData();">Get Data</button>
+<button class="btn" onclick="GetDataAsync();">Get Data Async</button>
+<button class="btn" onclick="ClearData();">Clear</button>
+<div id="container">
+</div>
+<script>
+    function GetData() {
+        $.post('@Url.Action("GetData")').done(function (result) {
+            $('#container').append(result.data);
+        }).fail(function () {
+            alert('fail');
+        });
+    }
+    function GetDataAsync() {
+        $.post('@Url.Action("GetDataAsync")').done(function (result) {
+            $('#container').append(result.data);
+        }).fail(function () {
+            alert('fail');
+        });
+    }
+    function ClearData() {
+        $('#container').empty();
+    }
+</script>
